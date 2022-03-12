@@ -96,3 +96,30 @@ Complejo::Complejo(){
 	this->Imaginaria=0;
 }
 
+Complejo &operator *(const Complejo &C1,const Complejo &C2 ){
+	
+	
+	double real=(C1.real*C2.real)+(C1.Imaginaria*C2.Imaginaria);
+	double img=(C1.real*C2.Imaginaria)+(C1.Imaginaria*C2.real);
+	return *(new Complejo(real,img));
+	  
+	
+	
+	
+}
+Complejo &operator /(const Complejo &C1,const Complejo &C2){
+	  
+	  double deno=(C2.real*C2.real)+(C2.Imaginaria*C2.Imaginaria);
+	  double Z1=(C1.real*C2.real)+(C1.Imaginaria*C2.Imaginaria);
+	  double Z2=(-C1.real*C2.Imaginaria)+(C1.Imaginaria*C2.real);
+	  double real=Z1/deno;
+	  double img=Z2/deno;
+	 return *(new Complejo(real,img));
+	  
+	  
+	
+	
+	
+	
+	
+}
